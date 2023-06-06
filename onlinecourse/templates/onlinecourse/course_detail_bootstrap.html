@@ -50,7 +50,7 @@
                     </div>
                     <button class="btn btn-primary btn-block" data-toggle="collapse" data-target="#exam{{lesson.id}}">Start Exam</button>
                     <div id="exam{{lesson.id}}" class="collapse">
-                        <form action="{% url 'onlinecourse:submit' %}" method="post">
+                        <form action="{% url 'onlinecourse:submit' lesson_id=lesson.id %}" method="post">
                             {% for question in lesson.question_set.all %}
                                 <div class="card mt-1">
                                     <div class="card-header"><h5>{{ question.question_text }}</h5></div>
